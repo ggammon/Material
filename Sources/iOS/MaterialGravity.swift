@@ -30,7 +30,7 @@
 
 import UIKit
 
-public enum MaterialGravity {
+@objc public enum MaterialGravity: Int {
 	case Center
 	case Top
 	case Bottom
@@ -73,4 +73,11 @@ public func MaterialGravityToValue(gravity: MaterialGravity) -> String {
 	case .ResizeAspectFill:
 		return kCAGravityResizeAspectFill
 	}
+}
+
+@objc(MaterialGravityBridge)
+public class MaterialGravityBridge: NSObject{
+    public class func ToValue(gravity: MaterialGravity) -> String{
+        return MaterialGravityToValue(gravity: gravity);
+    }
 }

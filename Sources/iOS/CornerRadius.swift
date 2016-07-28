@@ -30,7 +30,7 @@
 
 import UIKit
 
-public enum CornerRadiusPreset {
+@objc public enum CornerRadiusPreset: Int {
 	case none
 	case cornerRadius1
 	case cornerRadius2
@@ -67,4 +67,11 @@ public func CornerRadiusPresetToValue(preset: CornerRadiusPreset) -> CGFloat {
 	case .cornerRadius9:
 		return 64
 	}
+}
+
+@objc(CornerRadiusBridge)
+public class CornerRadiusBridge: NSObject{
+    public class func ToValue(preset: CornerRadiusPreset) -> CGFloat{
+        return CornerRadiusPresetToValue(preset: preset);
+    }
 }

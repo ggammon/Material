@@ -53,7 +53,7 @@ public class BottomNavigationFadeAnimatedTransitioning : NSObject, UIViewControl
 	}
 }
 
-public enum BottomNavigationTransitionAnimation {
+@objc public enum BottomNavigationTransitionAnimation: Int {
 	case none
 	case fade
 }

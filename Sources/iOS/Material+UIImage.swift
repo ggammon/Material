@@ -30,7 +30,7 @@
 
 import UIKit
 
-public enum ImageFormat {
+@objc public enum ImageFormat: Int {
 	case png
 	case jpeg
 }

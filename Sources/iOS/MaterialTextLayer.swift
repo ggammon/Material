@@ -30,6 +30,7 @@
 
 import UIKit
 
+@objc(MaterialTextLayer)
 public class MaterialTextLayer : CATextLayer {
 	/**
 	:name:	fontType

@@ -30,7 +30,7 @@
 
 import UIKit
 
-public enum InterimSpacePreset {
+@objc public enum InterimSpacePreset: Int {
     case none
     case interimSpace1
     case interimSpace2
@@ -68,5 +68,12 @@ public func InterimSpacePresetToValue(preset: InterimSpacePreset) -> InterimSpac
         return 24
     case .interimSpace9:
         return 28
+    }
+}
+
+@objc(InterimSpaceBridge)
+public class InterimSpaceBridge: NSObject{
+    public class func ToValue(preset: InterimSpacePreset) -> CGFloat{
+        return InterimSpacePresetToValue(preset: preset);
     }
 }

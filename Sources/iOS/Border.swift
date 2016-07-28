@@ -30,7 +30,7 @@
 
 import UIKit
 
-public enum BorderWidthPreset {
+@objc public enum BorderWidthPreset: Int {
 	case none
 	case border1
 	case border2
@@ -67,4 +67,11 @@ public func BorderWidthPresetToValue(preset: BorderWidthPreset) -> CGFloat {
 	case .border9:
 		return 8
 	}
+}
+
+@objc(BorderWidthPresetBridge)
+public class BorderWidthPresetBridge: NSObject{
+    public class func ToValue(preset: BorderWidthPreset) -> CGFloat{
+        return BorderWidthPresetToValue(preset: preset);
+    }
 }

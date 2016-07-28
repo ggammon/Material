@@ -32,7 +32,7 @@ import UIKit
 
 import UIKit
 
-public enum EdgeInsetsPreset {
+@objc public enum EdgeInsetsPreset: Int {
     case none
     
     // square
@@ -136,5 +136,12 @@ public func EdgeInsetsPresetToValue(preset: EdgeInsetsPreset) -> EdgeInsets {
         return EdgeInsets(top: 56, left: 28, bottom: 56, right: 28)
     case .tallRectangle9:
         return EdgeInsets(top: 64, left: 32, bottom: 64, right: 32)
+    }
+}
+
+@objc(EdgeInsetsBridge)
+public class EdgeInsetsBridge: NSObject{
+    public class func ToValue(preset: EdgeInsetsPreset) -> EdgeInsets{
+        return EdgeInsetsPresetToValue(preset: preset);
     }
 }
